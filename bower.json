@@ -1,0 +1,19 @@
+{
+    "name": "js-dice-roller",
+    "version": "0.0.0",
+    "authors": [
+        "m-j"
+    ],
+    "description": "Rolls a dice",
+    "main": "application/js/main.js",
+    "keywords": [
+        "dice",
+        "demo"
+    ],
+    "license": "MIT",
+    "private": true,
+    "dependencies" : {
+        "jquery" : ">=2.0.0",
+        "bootstrap" : ">=3.0.0"
+    }
+}
