@@ -1,28 +1,39 @@
 define(
     [
         'angular'
+        , './controllers/rollDescriptionController'
+        , './controllers/rollResultsController'
+        , './services/rollSimulator'
+        , './factories/randomizer'
         , 'angular-route'
     ]
     , function(
             angular
+            , RollDescriptionController
+            , RollResultsController
+            , RollSimulator
+            , randomizer
         )
     {
         var diceModule = angular.module('diceModule', ['ngRoute']);
+        diceModule.controller('rollDescriptionController', RollDescriptionController);
+        diceModule.controller('rollResultsController', RollResultsController);
+        diceModule.service('rollSimulator', RollSimulator);
+        diceModule.factory('randomizer', randomizer);
 
-        diceModule.config(function($routeProvider){
+        diceModule.config(['$routeProvider', function($routeProvider){
             $routeProvider
-                .when('/', {
-                    templateUrl : 'views/main.html',
-                    controller : function(){}
-                })
                 .when('/roll', {
-                    templateUrl : 'views/training.html',
-                    controller: 'p90xTrainingController'
+                    templateUrl : 'views/roll-description.html',
+                    controller: 'rollDescriptionController'
                 })
                 .when('/roll/:description', {
-                    templateUrl : 'views/exercise.html',
-                    controller : 'p90xExerciseController'
+                    templateUrl : 'views/roll-results.html',
+                    controller : 'rollResultsController'
+                })
+                .otherwise({
+                    redirectTo: '/roll'
                 });
-        })
+        }])
     }
 );

@@ -1,7 +1,7 @@
 var tests = [];
 
 for (var file in window.__karma__.files) {
-//    console.log('File added for RequireJS: ' + file);
+    console.log('File added for RequireJS: ' + file);
     if (/base\/spec.*Spec\.js$/.test(file)) {
         console.log('Adding file to tests ' + file);
         tests.push(file);

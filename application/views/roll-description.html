@@ -1,3 +1,15 @@
-<h1>
-    Roll
-</h1>
+<div id="rollDescriptionDiv">
+    <h1>
+        Roll
+    </h1>
+    <div>
+        Enter roll description
+        <div>
+            <span>(Format: 2d10, 5d3 ...)</span>
+        </div>
+        <div>
+            <input ng-model="rollDescription"/>
+        </div>
+        <button ng-click="roll()">Roll!</button>
+    </div>
+</div>
