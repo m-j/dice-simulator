@@ -51,7 +51,7 @@ define(
                     expect(validationResult).toEqual({
                         valid : true,
                         sides: 6,
-                        rolls: 2
+                        count: 2
                     })
                 })
             })

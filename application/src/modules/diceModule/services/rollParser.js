@@ -29,7 +29,7 @@ define(['./validationMessages'],function (validationMessages) {
             return {
                 valid : true,
                 sides : sidesCount,
-                rolls: rollsCount
+                count: rollsCount
             }
         }
     }

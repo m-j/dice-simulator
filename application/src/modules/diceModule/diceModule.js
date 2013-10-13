@@ -4,6 +4,7 @@ define(
         , './controllers/rollDescriptionController'
         , './controllers/rollResultsController'
         , './services/rollSimulator'
+        , './services/rollParser'
         , './factories/randomizer'
         , 'angular-route'
     ]
@@ -12,6 +13,7 @@ define(
             , RollDescriptionController
             , RollResultsController
             , RollSimulator
+            , RollParser
             , randomizer
         )
     {
@@ -19,6 +21,8 @@ define(
         diceModule.controller('rollDescriptionController', RollDescriptionController);
         diceModule.controller('rollResultsController', RollResultsController);
         diceModule.service('rollSimulator', RollSimulator);
+        diceModule.service('rollParser', RollParser);
+
         diceModule.factory('randomizer', randomizer);
 
         diceModule.config(['$routeProvider', function($routeProvider){
