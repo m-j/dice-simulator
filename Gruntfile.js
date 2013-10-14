@@ -2,21 +2,38 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        "karma": {
+        'karma': {
             dev: {
                 configFile: 'spec/karma-dev.conf.js'
             },
             dist : {
                 configFile: 'spec/karma-dist.conf.js'
             }
+        },
+        'requirejs' : {
+            'dist' : {
+                options : {
+                    appDir: 'application',
+                    dir: 'target/dist',
+                    baseUrl: './',
+                    optimize: 'none',
+                    generateSourceMaps: true,
+                    preserveLicenseComments: false,
+                    useSourceUrl: true,
+                    mainConfigFile: 'application/src/main.js',
+                    modules: [
+                        {
+                            name: 'src/main'
+                        }
+                    ]
+                }
+            }
         }
     })
 
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-requirejs')
 
     grunt.registerTask('test-dev', ['karma:dev']);
     grunt.registerTask('test-dist', ['karma:dist']);
-
-
-
 };

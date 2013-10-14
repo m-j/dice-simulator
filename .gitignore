@@ -1,3 +1,4 @@
 .idea
 application/lib
 node_modules
+target
