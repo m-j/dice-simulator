@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         "karma": {
-            test: {
+            dev: {
                 configFile: 'karma.conf.js'
             }
         }
@@ -11,5 +11,6 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('test', ['karma:test'])
+    grunt.registerTask('test', ['karma:dev'])
+
 };

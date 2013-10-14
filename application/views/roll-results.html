@@ -5,7 +5,7 @@
 
     <div>
         <ul>
-            <li ng-repeat="result in rollResults">
+            <li ng-repeat="result in rollResults track by $index">
                 {{ result }}
             </li>
         </ul>
