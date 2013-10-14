@@ -4,13 +4,19 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         "karma": {
             dev: {
-                configFile: 'karma.conf.js'
+                configFile: 'spec/karma-dev.conf.js'
+            },
+            dist : {
+                configFile: 'spec/karma-dist.conf.js'
             }
         }
     })
 
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('test', ['karma:dev'])
+    grunt.registerTask('test-dev', ['karma:dev']);
+    grunt.registerTask('test-dist', ['karma:dist']);
+
+
 
 };
