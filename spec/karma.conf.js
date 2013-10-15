@@ -16,7 +16,8 @@ var commonConf = {
     plugins: [
         'karma-jasmine',
         'karma-chrome-launcher',
-        'karma-requirejs'
+        'karma-requirejs',
+        'karma-phantomjs-launcher'
     ],
     autoWatch : true
 }
@@ -25,7 +26,7 @@ var extendKarmaConf = function(extensionConf){
     return function(config){
         var extendedConf = _.assign({}, commonConf, extensionConf);
 
-        console.log(extensionConf)
+        console.log('Karma conf is:')
         console.log(extendedConf);
 
         config.set(extendedConf);

@@ -6,8 +6,6 @@ exports.register = function(grunt){
         var scriptContent = 'cd `dirname $0`; ws -p 8001';
         var scriptPath = 'target/dist/run.sh';
 
-
-        console.log('dupa')
         var absoulteScriptPath = path.resolve(scriptPath);
 
         grunt.file.write(absoulteScriptPath, scriptContent, {encoding: 'utf-8'})

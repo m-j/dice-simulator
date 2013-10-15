@@ -18,7 +18,7 @@ module.exports = function(grunt) {
                     appDir: 'application',
                     dir: 'target/dist',
                     baseUrl: './',
-                    optimize: 'uglify2',
+                    optimize: 'none',
                     generateSourceMaps: true,
                     preserveLicenseComments: false,
                     useSourceUrl: true,
@@ -41,5 +41,5 @@ module.exports = function(grunt) {
     grunt.registerTask('test-dev', ['karma:dev']);
     grunt.registerTask('test-dist', ['karma:dist']);
 
-    grunt.registerTask('dist', ['requirejs:dist', 'add-server-runner']);
+    grunt.registerTask('dist', ['test-dist', 'requirejs:dist', 'add-server-runner']);
 };
