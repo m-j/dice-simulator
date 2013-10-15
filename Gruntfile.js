@@ -1,3 +1,5 @@
+var addServerRunnerTask = require('./build/addServerRunnerTask.js');
+
 module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
@@ -16,7 +18,7 @@ module.exports = function(grunt) {
                     appDir: 'application',
                     dir: 'target/dist',
                     baseUrl: './',
-                    optimize: 'none',
+                    optimize: 'uglify2',
                     generateSourceMaps: true,
                     preserveLicenseComments: false,
                     useSourceUrl: true,
@@ -34,6 +36,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-requirejs')
 
+    addServerRunnerTask.register(grunt);
+
     grunt.registerTask('test-dev', ['karma:dev']);
     grunt.registerTask('test-dist', ['karma:dist']);
+
+    grunt.registerTask('dist', ['requirejs:dist', 'add-server-runner']);
 };
