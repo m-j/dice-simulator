@@ -30,11 +30,15 @@ module.exports = function(grunt) {
                     ]
                 }
             }
+        },
+        "jshint" : {
+            src: ['application/src/**/*.js']
         }
     })
 
     grunt.loadNpmTasks('grunt-karma');
-    grunt.loadNpmTasks('grunt-requirejs')
+    grunt.loadNpmTasks('grunt-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
     addServerRunnerTask.register(grunt);
 
