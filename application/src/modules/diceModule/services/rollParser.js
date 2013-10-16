@@ -4,7 +4,7 @@ define(['./validationMessages'],function (validationMessages) {
             return {
                 valid : false,
                 message : validationMessages[messageKey]
-            }
+            };
         }
 
         this.parse = function(rollDescription){
@@ -12,7 +12,7 @@ define(['./validationMessages'],function (validationMessages) {
             var match = rollDescription.match(rollRegex);
 
             if(!match){
-                return errorResult('WRONG_FORMAT')
+                return errorResult('WRONG_FORMAT');
             }
 
             var rollsCount = parseInt(match[1], 10);
@@ -30,9 +30,9 @@ define(['./validationMessages'],function (validationMessages) {
                 valid : true,
                 sides : sidesCount,
                 count: rollsCount
-            }
-        }
-    }
+            };
+        };
+    };
 
     RollParser.$inject = [];
 

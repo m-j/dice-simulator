@@ -2,8 +2,8 @@ requirejs.config({
     baseUrl : '/',
     paths : {
         'jquery' : 'lib/jquery/jquery'
-        , 'angular' : 'lib/angular/angular'
-        , 'angular-route' : 'lib/angular-route/angular-route'
+       ,'angular' : 'lib/angular/angular'
+       ,'angular-route' : 'lib/angular-route/angular-route'
     },
     shim : {
         'jquery' : {
@@ -17,7 +17,7 @@ requirejs.config({
             deps : ['angular']
         }
     }
-})
+});
 
 require(['jquery'
     , 'angular'

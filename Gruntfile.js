@@ -32,7 +32,11 @@ module.exports = function(grunt) {
             }
         },
         "jshint" : {
-            src: ['application/src/**/*.js']
+            src: ['application/src/**/*.js'],
+            options : {
+
+                jshintrc : 'build/jshintrc.json'
+            }
         }
     })
 

@@ -9,8 +9,8 @@ define(function () {
             }
 
             return resultSet;
-        }
-    }
+        };
+    };
 
     RollSimulator.$inject = ['randomizer'];
 

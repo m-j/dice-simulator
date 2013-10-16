@@ -38,6 +38,6 @@ define(
                 .otherwise({
                     redirectTo: '/roll'
                 });
-        }])
+        }]);
     }
 );
