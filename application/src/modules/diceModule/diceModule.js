@@ -39,5 +39,7 @@ define(
                     redirectTo: '/roll'
                 });
         }]);
+
+        return diceModule;
     }
 );
