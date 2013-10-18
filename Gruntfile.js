@@ -49,5 +49,5 @@ module.exports = function(grunt) {
     grunt.registerTask('test-dev', ['karma:dev']);
     grunt.registerTask('test-dist', ['karma:dist']);
 
-    grunt.registerTask('dist', ['test-dist', 'requirejs:dist', 'add-server-runner']);
+    grunt.registerTask('dist', ['jshint', 'test-dist', 'requirejs:dist', 'add-server-runner']);
 };
